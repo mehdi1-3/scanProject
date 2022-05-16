@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block content %}
+
+<br><br>
+<div class="container d-flex justify-content-center">
+  <form method="POST" class="form-floating">
+      <div class="justify-content-md-center mx-auto">
+        <label for="domain" class="d-flex justify-content-center">Domain</label>
+        <input
+          type="text"
+          class="form-control justify-content-md-center"
+          id="domain"
+          name="domain"
+          placeholder="Enter domain"
+        />
+        <button type="submit" class="btn btn-dark text-center justify-content-center">Submit</button>
+      </div> 
+      
+  
+    </form>
+  </div>
+  <br><br>
+  <div class="container d-flex justify-content-center">
+    <h2 class="text-center">{{msg}}</h2>
+  
+    <dl class="row">
+    {%for i in zipped%}
+    <dt class="col-sm-3 text-center">{{i[0]}}</dt>
+    <dd class="col-sm-9 text-center">{{i[1]}}</dd>
+    {%endfor%}
+  </dl>
+</div>
+
+
+{% endblock %}

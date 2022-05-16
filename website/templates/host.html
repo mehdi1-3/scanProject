@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block content %}
+
+<br><br><br>
+
+<div class="container d-flex justify-content-center">
+<div class="container d-flex justify-content-center">
+<form method="POST" class="form-floating">
+    <div class="justify-content-md-center mx-auto">
+      <label for="domain" class="d-flex justify-content-center">Domain</label>
+      <input
+        type="text"
+        class="form-control justify-content-md-center"
+        id="domain"
+        name="domain"
+        placeholder="Enter domain"
+      />
+      <button type="submit" class="btn btn-dark text-center justify-content-center">Submit</button>
+
+    </div> 
+    
+
+  </form>
+</div>
+</div>
+
+
+  <br><br>
+  <h3 class="text-center">List of hosts</h3>
+  <br>
+  <div class="container">
+  <table class="table table-responsive table-bordered">
+    <thead>
+      <tr>
+        <th class="text-center" scope="col">#</th>
+        <th class="text-center" scope="col">Host IP adress</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      {%for i in zipped%}
+      <tr> 
+        <th class="text-center" scope="row">{{i[1]}}</th>
+        <td class="text-center">{{i[0]}}</td>
+      </tr>
+      {%endfor%}
+    </tbody>
+  
+  </table>
+</div>
+
+{% endblock %}
